@@ -1,0 +1,90 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Nates Game Hub",
+   Icon = 1,
+   LoadingTitle = "Nates Game Hub",
+   LoadingSubtitle = "by SamoanPrinceNate",
+   Theme = "AmberGlow",
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = true, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = Wowzers, 
+      FileName = "Nates Saving Script"
+   },
+
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = false -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Nates Key System",
+      Subtitle = "Saving Games?",
+      Note = "Go Through the key system Nicely to save the game", -- Use this to tell the user how to get a key
+      FileName = "Nate's Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"https://pastebin.com/raw/7nddrYaT"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("Main", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Save")
+
+Rayfield:Notify({
+   Title = "Thanks for Using Nates Script!",
+   Content = "Notification Content",
+   Duration = 6.5,
+   Image = nil,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Save Game",
+   Callback = function()
+   saveinstance({decomptype = new})
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Admin Commands")
+
+local Button = MainTab:CreateButton({
+   Name = "Nameless Admin",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Blox Fruits")
+
+local Button = MainTab:CreateButton({
+   Name = "Blox Fruits Script",
+   Callback = function()
+   loadstring(game.HttpGet(game,'https://raw.githubusercontent.com/Yumiara/Python/refs/heads/main/BloxFruit-XYZ.lua'))()
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Fisch")
+
+local Button = MainTab:CreateButton({
+   Name = "OP Fisch Script WORKING",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))()
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Speed Slider")
+
+local Toggle = MainTab:CreateToggle({
+   Name = "Infinite Jump",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+loadstring(game:HttpGet("https://pastebin.com/raw/8miZU3Jk",true))()
+   end,
+})
